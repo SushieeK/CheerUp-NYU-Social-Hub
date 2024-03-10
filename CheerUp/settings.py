@@ -28,26 +28,14 @@ SECRET_KEY = "django-insecure-7a(i$_$tw(o7y2(ad4u8==68h4qln2%g&^a#6d+gz4b66j3v$#
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "cheerup-env.eba-sn3jjdga.us-east-1.elasticbeanstalk.com",
+    "http://cheerup.pythonanywhere.com/",
     "localhost",
     "127.0.0.1",
 ]
 
 ASGI_APPLICATION = "CheerUp.asgi.application"
 
-
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "cheerup",
-        "USER": os.environ["DB_KEY"],
-        "PASSWORD": os.environ["DB_KEYP"],
-        "HOST": "database-1.ceenqhnjmvnk.us-west-2.rds.amazonaws.com",
-        "PORT": "5432",  # Default PostgreSQL port
-    }
-}
-if "test" in sys.argv:
-    DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
             "NAME": ":memory:",
